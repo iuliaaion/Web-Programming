@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cake Shop</title>
+
+    <style>
+        body
+        {
+            background-image: url('cake_background3.jpg');
+            background-size: cover;
+        }
+    </style>
+
+    <style>
+        table {
+            border-spacing: 0;
+            width: 80%;
+            border: 1px solid #dddd;
+        }
+
+        th
+        {
+            text-align: center;
+            background: rosybrown;
+        }
+
+        td {
+            text-align: center;
+            padding: 15px;
+            background: ghostwhite;
+        }
+
+        h1
+        {
+            font-family: "Brush Script MT";
+            font-size: 40px;
+        }
+
+    </style>
+</head>
+
+<body>
+<center>
+    <h1> International Cake Architect </h1>
+
+    <table id="table">
+        <tr>
+            <!--Calls sortTable function(0 for
+                country and 1 for capital) when
+                headers are clicked-->
+            <th onclick="sortTable(0)">Name</th>
+            <th onclick="sortTable(1)">Country</th>
+            <th onclick="sortTable(2)">Cake</th>
+        </tr>
+        <tr>
+            <td>Mia</td>
+            <td>Washington DC</td>
+            <td>Chocolate Cake</td>
+        </tr>
+        <tr>
+            <td>Jim</td>
+            <td>Miami</td>
+            <td>Strawberry Cake</td>
+        </tr>
+        <tr>
+            <td>Larry</td>
+            <td>New York</td>
+            <td>Carrot Cake</td>
+        </tr>
+        <tr>
+            <td>Sam</td>
+            <td>Manhattan</td>
+            <td>Tiramisu</td>
+        </tr>
+        <tr>
+            <td>Christeen</td>
+            <td>Los Angeles</td>
+            <td>Butter Cake</td>
+        </tr>
+        <tr>
+            <td>Louisa</td>
+            <td>Las vegas</td>
+            <td>Sponge Cake</td>
+        </tr>
+    </table>
+
+    <script>
+        function sortTable(n) {
+            var table;
+            table = document.getElementById("table");
+            var rows, i, x, y, count = 0;
+            var switching = true;
+
+            // Order is set as ascending
+            var direction = "ascending";
+
+            // Run loop until no switching is needed
+            while (switching)
+            {
+                switching = false;
+                rows = table.rows;
+
+                //Loop to go through all rows
+                for (i = 1; i < (rows.length - 1); i++) {
+                    var Switch = false;
+
+                    // Fetch 2 elements that need to be compared
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+
+                    // Check the direction of order
+                    if (direction == "ascending") {
+
+                        // Check if 2 rows need to be switched
+                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase())
+                        {
+                            // If yes, mark Switch as needed and break loop
+                            Switch = true;
+                            break;
+                        }
+                    } else if (direction == "descending") {
+
+                        // Check direction
+                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase())
+                        {
+                            // If yes, mark Switch as needed and break loop
+                            Switch = true;
+                            break;
+                        }
+                    }
+                }
+                if (Switch) {
+                    // Function to switch rows and mark switch as completed
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+
+                    // Increase count for each switch
+                    count++;
+                } else {
+                    // Run while loop again for descending order
+                    if (count == 0 && direction == "ascending") {
+                        direction = "descending";
+                        switching = true;
+                    }
+                }
+            }
+        }
+    </script>
+</center>
+</body>
+
+</html>
