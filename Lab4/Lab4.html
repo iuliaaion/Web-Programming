@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "utf-8">
+    <title>Strawberry Cheesecake</title>
+
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+          rel = "stylesheet">
+    <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+    <!-- CSS -->
+    <style>
+        .ui-widget-header,.ui-state-default, ui-button
+        {
+            background: rosybrown;
+            border: 1px solid rosybrown;
+            color: ghostwhite;
+            font-weight: bold;
+            font-size: 15px;
+        }
+    </style>
+
+    <style>
+        .button1
+        {
+            font-size: 24px;
+            width: 250px;
+            border-radius: 12px;
+            border-color: rosybrown;
+            background: rosybrown;
+            font-family: "Copperplate";
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            margin: 0;
+            position: absolute;
+            top: 7%;
+            left: 80%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        .div1
+        {
+            font-family: Garamond;
+        }
+
+        h1
+        {
+            font-family: "Copperplate";
+            font-size: 40px;
+        }
+    </style>
+
+    <style>
+        body
+        {
+            background-image: url('fruits.jpg');
+            background-size: cover;
+        }
+    </style>
+
+
+    <script>
+        $(function() {
+            $( "#dialog-1" ).dialog({
+                autoOpen: false,
+                draggable: false,
+            });
+            $( "#opener" ).click(function() {
+                $( "#dialog-1" ).dialog( "open");
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+<center>
+    <h1> Strawberry Cheesecake </h1>
+</center>
+
+    <div id = "dialog-1" title = "Recipe for 18 serves" class="div1">
+
+        <b>Biscuit Base</b>
+
+        <ul>
+            <li>75g unsalted butter</li>
+            <li>300g dark chocolate biscuits</li>
+        </ul>
+
+        <b>Filling</b>
+
+        <ul>
+            <li>425g dark cherries in syrup</li>
+            <li>350g sugar</li>
+            <li>6 large eggs</li>
+            <li>400g double cream</li>
+            <li>560g cream cheese</li>
+            <li>vanilla extract</li>
+        </ul>
+
+        <b>Topping</b>
+
+        <ul>
+            <li>200g dark chocolate</li>
+            <li>1 dash of double cream</li>
+            <li>50g unsalted butter</li>
+        </ul>
+
+        <p><a href="https://www.jamieoliver.com/recipes/chocolate-recipes/black-forest-frozen-cheesecake/">tap for method</a></p>
+
+    </div>
+
+    <button id = "opener" class="button1">Recipe</button>
+
+
+</body>
+
+
+</html>
